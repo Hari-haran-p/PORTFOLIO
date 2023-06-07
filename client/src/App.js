@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const resp = await axios
-        .get(`http://localhost:5000`)
+        .get('/api/')
         .catch((err) => console.log(err));
       setData(resp.data);
     }
