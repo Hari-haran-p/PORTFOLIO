@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 const express = require("express");
-const MongoClient = require('mongodb').MongoClient
+// const MongoClient = require('mongodb')
 const cors = require('cors');
 const bodyparser = require('body-parser');
 const app = express();
 app.use(cors());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.json());
 
-const uri = "mongodb+srv://hariharanpcs21:hariharan@cluster0.nw5s3ir.mongodb.net/demo?retryWrites=true&w=majority"
+const uri = "mongodb+srv://hariharanpcs21:hari@cluster0.nw5s3ir.mongodb.net/demo?retryWrites=true&w=majority&appName=Cluster0"
 
 const db = mongoose.connect(uri,{useNewUrlParser: true,useUnifiedTopology: true})
 .then(()=>{
@@ -20,7 +20,7 @@ const db = mongoose.connect(uri,{useNewUrlParser: true,useUnifiedTopology: true}
 });
 
 const userschema = new mongoose.Schema({
-    site_name:'string',
+    site_name:"string",
     site_link:"string",
     img:"string"
 })
@@ -37,7 +37,7 @@ app.get('/',(req,res)=>{
     })
 })
 
-const port = 5000
+const port = 5000;
 
 app.listen(port,()=>{
     console.log(`connected to the port ${port}`)

@@ -238,6 +238,16 @@ img {
   background: var(--gardient-color);
 }
 
+.button1 {
+  margin-top: 15px;
+  display: inline-block;
+  color: #fff;
+  padding: 0.50rem 1.5rem;
+  font-weight: var(--font-semi);
+  border-radius: 0.5rem;
+  background: var(--gardient-color);
+}
+
 .button:hover {
   box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
 }
@@ -335,19 +345,23 @@ img {
   z-index: var(--z-back);
 }
 
-.skill_html {
-  width: 95%;
+.skill_react {
+  width: 80%;
 }
 
-.skill_css {
-  width: 85%;
+.skill_tailwind{
+  width: 90%;
+}
+
+.skill_node {
+  width: 50%;
 }
 
 .skill_js {
-  width: 75%;
+  width: 70%;
 }
 
-.skill_ui {
+.skill_sql {
   width: 85%;
 }
 
