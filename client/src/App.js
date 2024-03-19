@@ -12,19 +12,21 @@ function App() {
     }
   };
 
-  const [ data , setData]=useState([])
+  const [ data , setData] = useState([
+    {"_id":{"$oid":"6459f32ee1c0f0827afb588e"},"site_link":"none","site_name":"Portfolio","img":"/img/portfolio.png"},
+    {"_id":{"$oid":"6458bdcd40fb10c32fb9afbd"},"site_link":"https://cloud.bitsathy.ac.in/","site_name":"Cloud Lab Website","img":"/img/cloud.png"},
+    {"_id":{"$oid":"6458bdcd40fb10c32fb9afbf"},"site_link":"http://44.203.84.49/","site_name":"Online Course Site","img":"/img/corsera.png"}
+  ])
 
-  useEffect(() => {
-    async function fetchData() {
-      const resp = await axios
-        .get('/api/')
-        .catch((err) => console.log(err));
-      setData(resp.data);
-    }
-    fetchData();
-  },[setData]);
-
-  console.log(data);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const resp = await axios
+  //       .get('http://localhost:5000/')
+  //       .catch((err) => console.log(err));
+  //     setData(resp.data);
+  //   }
+  //   fetchData();
+  // },[setData]);
 
   return (
     <>
@@ -1035,6 +1037,7 @@ function App() {
             {datas.site_name}
               </div>
               <a href={datas.site_link} target="blank"><button className="view-button">View site</button></a>
+              {/* {console.log(datas.site_name)} */}
             </div>
           </div>
           </>
