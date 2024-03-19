@@ -20,7 +20,7 @@ mongoose.connect(uri, {
 });
 
 const userschema = new mongoose.Schema({
-    site_name:'string',
+    site_name:"string",
     site_link:"string",
     img:"string"
 })

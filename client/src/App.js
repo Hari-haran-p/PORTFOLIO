@@ -1,6 +1,6 @@
 import "./App.css";
-import axios from 'axios';
-import { useRef,useState,useEffect } from "react";
+import axios from "axios";
+import { useRef, useState, useEffect } from "react";
 
 function App() {
   const navref = useRef(null);
@@ -83,23 +83,46 @@ function App() {
               <br />
               Web Designer
             </h1>
-            <a href="https://www.linkedin.com/in/hari-haran-p/" target="blank" className="button">
+            <a
+              href="https://www.linkedin.com/in/hari-haran-p/"
+              target="blank"
+              className="button"
+            >
               {" "}
               Hire Me
             </a>
           </div>
 
           <div className="home_social">
-            <a href="https://www.facebook.com/virat.hari.3386" target="blank" className="home_social-icon">
+            <a
+              href="https://www.facebook.com/virat.hari.3386"
+              target="blank"
+              className="home_social-icon"
+            >
               <i className="bx bxl-facebook-circle"></i>
             </a>
-            <a href="https://www.instagram.com/domi_kido___/" target="blank" className="home_social-icon" data-aos-delay="250">
+            <a
+              href="https://www.instagram.com/domi_kido___/"
+              target="blank"
+              className="home_social-icon"
+              data-aos-delay="250"
+            >
               <i className="bx bxl-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/in/hari-haran-p/" target="blank" className="home_social-icon" data-aos-delay="300">
+            <a
+              href="https://www.linkedin.com/in/hari-haran-p/"
+              target="blank"
+              className="home_social-icon"
+              data-aos-delay="300"
+            >
               <i className="bx bxl-linkedin"></i>
             </a>
-            <a href="https://github.com/Hari-haran-p" target="blank" className="home_social-icon" data-aos-delay="350">
+            <a
+              href="https://github.com/Hari-haran-p"
+              target="blank"
+              className="home_social-icon"
+              data-aos-delay="350"
+            >
               <i className="bx bxl-github"></i>
             </a>
           </div>
@@ -725,6 +748,9 @@ function App() {
                 innovative projects and collaborate with experienced
                 professionals to enhance my skills.
               </p>
+              <div>
+                <a href="./img/Resume.pdf" target="blank" className="button1">Download CV</a>
+              </div>
             </div>
           </div>
         </section>
@@ -737,35 +763,30 @@ function App() {
               <h2 className="skills_subtitle" data-aos-delay="250">
                 Professional Skills
               </h2>
-              <p className="skills_text" data-aos-delay="350">
-                Without sharpen your weapon; standing on the battlefield would
-                not increase your chance of winning
-              </p>
-
               <div className="skills_data">
                 <div className="skills_name">
-                  <i className="bx bxl-html5 skill_icon"></i>
-                  <span className="skill_name">Html5</span>
+                  <i className="bx bxl-react skill_icon"></i>
+                  <span className="skill_name">React Js</span>
                 </div>
 
                 <div>
-                  <span className="skill_percentage">95%</span>
+                  <span className="skill_percentage">80%</span>
                 </div>
 
-                <div className="skill_bar skill_html"></div>
+                <div className="skill_bar skill_react"></div>
               </div>
 
               <div className="skills_data" data-aos-delay="250">
                 <div className="skills_name">
-                  <i className="bx bxl-css3 skill_icon"></i>
-                  <span className="skill_name">CSS3</span>
+                  <i className="bx bxl-nodejs skill_icon"></i>
+                  <span className="skill_name">Node Js</span>
                 </div>
 
                 <div>
-                  <span className="skill_percentage">85%</span>
+                  <span className="skill_percentage">50%</span>
                 </div>
 
-                <div className="skill_bar skill_css"></div>
+                <div className="skill_bar skill_node"></div>
               </div>
 
               {/* SKILLS JS  */}
@@ -776,26 +797,42 @@ function App() {
                 </div>
 
                 <div>
-                  <span className="skill_percentage">65%</span>
+                  <span className="skill_percentage">70%</span>
                 </div>
 
                 <div className="skill_bar skill_js"></div>
               </div>
 
-              {/* SKILLS UI/UX */}
+              {/* SKILLS MYSQL */}
               <div className="skills_data" data-aos-delay="250">
                 <div className="skills_name">
-                  <i className="bx bxs-paint skill_icon"></i>
-                  <span className="skill_name">UI / UX</span>
+                  <i className="bx bxs-data skill_icon"></i>
+                  <span className="skill_name">MySQL</span>
                 </div>
 
                 <div>
                   <span className="skill_percentage">85%</span>
                 </div>
 
-                <div className="skill_bar skill_ui"></div>
+                <div className="skill_bar skill_sql"></div>
+              </div>
+
+              {/* tailwind */}
+              <div className="skills_data" data-aos-delay="250">
+                <div className="skills_name">
+                  <i className="bx bxl-css3 skill_icon"></i>
+                  <span className="skill_name">Tailwind</span>
+                </div>
+
+                <div>
+                  <span className="skill_percentage">90%</span>
+                </div>
+
+                <div className="skill_bar skill_tailwind"></div>
               </div>
             </div>
+
+            
 
             <div data-aos="fade-left" data-aos-delay="350">
               <svg
@@ -1050,33 +1087,50 @@ function App() {
 
         {/* Footer Section */}
         <section id="contact">
-        <footer className="footer">
-          <p className="footer_title">Hariharan P</p>
+          <footer className="footer">
+            <p className="footer_title">Hariharan P</p>
 
-          <div className="footer_socials">
-            <a href="https://www.facebook.com/virat.hari.3386" target="blank" className="footer_icon" data-aos-delay="250">
-              <i className="bx bxl-facebook-circle"></i>
-            </a>
-            <a href="https://www.instagram.com/domi_kido___/" target="blank" className="footer_icon" data-aos-delay="350">
-              <i className="bx bxl-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/hari-haran-p/" target="blank" className="footer_icon" data-aos-delay="450">
-              <i className="bx bxl-linkedin"></i>
-            </a>
-            <a href="https://github.com/Hari-haran-p" target="blank" className="footer_icon" data-aos-delay="550">
-              <i className="bx bxl-github"></i>
-            </a>
-          </div>
+            <div className="footer_socials">
+              <a
+                href="https://www.facebook.com/virat.hari.3386"
+                target="blank"
+                className="footer_icon"
+                data-aos-delay="250"
+              >
+                <i className="bx bxl-facebook-circle"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/domi_kido___/"
+                target="blank"
+                className="footer_icon"
+                data-aos-delay="350"
+              >
+                <i className="bx bxl-instagram"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/hari-haran-p/"
+                target="blank"
+                className="footer_icon"
+                data-aos-delay="450"
+              >
+                <i className="bx bxl-linkedin"></i>
+              </a>
+              <a
+                href="https://github.com/Hari-haran-p"
+                target="blank"
+                className="footer_icon"
+                data-aos-delay="550"
+              >
+                <i className="bx bxl-github"></i>
+              </a>
+            </div>
 
-          <p data-aos-delay="650">&#169; Created by Hari</p>
-        </footer>
+            <p data-aos-delay="650">&#169; Created by Hari</p>
+          </footer>
         </section>
       </main>
-         
-    
-         </>
+    </>
   );
 }
-
 
 export default App;
