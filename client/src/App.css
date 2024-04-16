@@ -237,6 +237,15 @@ img {
   border-radius: 0.5rem;
   background: var(--gardient-color);
 }
+.button2 {
+  display: inline-block;
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: 0.5rem;
+  background: var(--gardient-color);
+  margin-left: 20px;
+}
 
 .button1 {
   margin-top: 15px;
@@ -354,7 +363,7 @@ img {
 }
 
 .skill_node {
-  width: 50%;
+  width: 70%;
 }
 
 .skill_js {

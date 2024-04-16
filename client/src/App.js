@@ -34,7 +34,7 @@ function App() {
         <nav className="nav bd_grid">
           <div>
             <a href="#" className="nav_logo">
-              CodeWithHari
+              CodeWithMe
             </a>
           </div>
 
@@ -81,7 +81,7 @@ function App() {
               Hi, <br />
               I'm <span className="home_title-color">Hariharan P</span>
               <br />
-              Web Designer
+              Full Stack Developer
             </h1>
             <a
               href="https://www.linkedin.com/in/hari-haran-p/"
@@ -783,7 +783,7 @@ function App() {
                 </div>
 
                 <div>
-                  <span className="skill_percentage">50%</span>
+                  <span className="skill_percentage">70%</span>
                 </div>
 
                 <div className="skill_bar skill_node"></div>
