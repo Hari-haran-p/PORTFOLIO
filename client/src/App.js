@@ -1,8 +1,26 @@
 import "./App.css";
-import axios from "axios";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 function App() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("mailservice", "mailtemplate", form.current, {
+        publicKey: "tFy6-VrVdvDDGwgph",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
   const navref = useRef(null);
   const toggle = () => {
     if (navref.current.classList == "nav_menu") {
@@ -12,11 +30,32 @@ function App() {
     }
   };
 
-  const [ data , setData] = useState([
-    {"_id":{"$oid":"6459f32ee1c0f0827afb588e"},"site_link":"none","site_name":"Portfolio","img":"/img/portfolio.png"},
-    {"_id":{"$oid":"6458bdcd40fb10c32fb9afbd"},"site_link":"https://cloud.bitsathy.ac.in/","site_name":"Cloud Lab Website","img":"/img/cloud.png"},
-    {"_id":{"$oid":"6458bdcd40fb10c32fb9afbf"},"site_link":"http://44.203.84.49/","site_name":"Online Course Site","img":"/img/corsera.png"}
-  ])
+  const [data, setData] = useState([
+    {
+      _id: { $oid: "6459f32ee1c0f0827afb588e" },
+      site_link: "https://hariharanp.vercel.app/",
+      site_name: "Portfolio",
+      img: "/img/portfolio.png",
+    },
+    {
+      _id: { $oid: "6458bdcd40fb10c32fb9afbd" },
+      site_link: "https://cloud.bitsathy.ac.in/",
+      site_name: "Cloud Lab Website",
+      img: "/img/cloud.png",
+    },
+    {
+      _id: { $oid: "6458bdcd40fb10c32fb9afbf" },
+      site_link: "http://44.203.84.49/",
+      site_name: "Online Course Site",
+      img: "/img/corsera.png",
+    },
+    // {
+    //   _id: { $oid: "6458bdcd40fb10c32fb9afbf" },
+    //   site_link: "http://44.203.84.49/",
+    //   site_name: "Inventory Management Software",
+    //   img: "/img/corsera.png",
+    // },
+  ]);
 
   // useEffect(() => {
   //   async function fetchData() {
@@ -741,15 +780,20 @@ function App() {
                 I'm Hariharan P
               </h2>
               <p className="about_text" data-aos-delay="450">
-                As a passionate and motivated web developer, I am excited to
-                kickstart my career in the ever-evolving field of web
-                development. With a solid foundation in front-end technologies
-                and a willingness to learn, I am eager to contribute to
-                innovative projects and collaborate with experienced
-                professionals to enhance my skills.
+                A highly motivated and passionate full stack developer seeking
+                to start a career in web development. Possess a strong
+                foundation in CSS, JavaScript, MERN stack and eager to expand my
+                skills and apply them to solving real-world challenges and
+                contributing to innovative projects
               </p>
               <div>
-                <a href="./img/Resume.pdf" target="blank" className="button1">Download CV</a>
+                <a
+                  href="./img/HARIHARAN P_CSE.pdf"
+                  target="blank"
+                  className="button1"
+                >
+                  Download CV
+                </a>
               </div>
             </div>
           </div>
@@ -831,8 +875,6 @@ function App() {
                 <div className="skill_bar skill_tailwind"></div>
               </div>
             </div>
-
-            
 
             <div data-aos="fade-left" data-aos-delay="350">
               <svg
@@ -1062,33 +1104,115 @@ function App() {
         <section className="project section" id="project">
           <h2 className="section-title">Projects</h2>
           <div className="project-container">
-          {data.map((datas) => {
-          return (
-            <>
-          <div className="card">
-            <div className="first-content">
-              <img src={datas.img} alt="" />
-            </div>
-            <div className="second-content">
-            <div className="project-heading">
-            {datas.site_name}
-              </div>
-              <a href={datas.site_link} target="blank"><button className="view-button">View site</button></a>
-              {/* {console.log(datas.site_name)} */}
-            </div>
-          </div>
-          </>
-          );
-          })  
-        }
-          
+            {data.map((datas) => {
+              return (
+                <>
+                  <div className="card">
+                    <div className="first-content">
+                      <img src={datas.img} alt="" />
+                    </div>
+                    <div className="second-content">
+                      <div className="project-heading">{datas.site_name}</div>
+                      <a href={datas.site_link} target="blank">
+                        <button className="view-button">View site</button>
+                      </a>
+                      {/* {console.log(datas.site_name)} */}
+                    </div>
+                  </div>
+                </>
+              );
+            })}
           </div>
         </section>
 
         {/* Footer Section */}
         <section id="contact">
-          <footer className="footer">
-            <p className="footer_title">Hariharan P</p>
+          {/* <div class="container"> */}
+          <div class="inner-container">
+            <div class="tile1">
+              <div class="tile1-heading">Get in touch</div>
+              <div class="form-row ">I'm here for you! How can i help?</div>
+              <form ref={form} onSubmit={sendEmail}>
+                <div class="form-row">
+                  <input
+                    type="text"
+                    name="from_name"
+                    class="form-field"
+                    placeholder="Enter your Name"
+                  />
+                </div>
+                <div class="form-row">
+                  <input
+                    type="text"
+                    name="from_email"
+                    class="form-field"
+                    placeholder="Enter your email address"
+                  />
+                </div>
+                <div class="form-row">
+                  <textarea
+                    class="form-field"
+                    name="message"
+                    placeholder="Go ahead I am listening..."
+                  ></textarea>
+                </div>
+                <div class="form-row">
+                  <input type="submit" class="form-field btn" value="Submit" />
+                </div>
+              </form>
+            </div>
+            <div class="tile2">
+              <div class="tile2-image">
+                <img src="/img/Contact-us.png" alt="" />
+              </div>
+              <div className="contact_links">
+                <div class="form-row">
+                  <a
+                    href="https://www.instagram.com/domi_kido___/"
+                    target="blank"
+                    className="footer_icon"
+                    data-aos-delay="250"
+                  >
+                    <i className="bx bxl-instagram"></i>
+                  </a>
+                </div>
+                <div class="form-row">
+                  <a
+                    href="https://www.facebook.com/virat.hari.3386"
+                    target="blank"
+                    className="footer_icon"
+                    data-aos-delay="250"
+                  >
+                    <i className="bx bxl-facebook-circle"></i>
+                  </a>
+                </div>
+                <div class="form-row">
+                  <a
+                    href="https://github.com/Hari-haran-p"
+                    target="blank"
+                    className="footer_icon"
+                    data-aos-delay="250"
+                  >
+                    <i className="bx bxl-github"></i>
+                  </a>
+                </div>
+                <div class="form-row">
+                  <a
+                    href="https://www.linkedin.com/in/hari-haran-p/"
+                    target="blank"
+                    className="footer_icon"
+                    data-aos-delay="250"
+                  >
+                    <i className="bx bxl-linkedin">
+                      <span></span>
+                    </i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            {/* </div> */}
+          </div>
+          {/* <p className="footer_title">Hariharan P</p>
 
             <div className="footer_socials">
               <a
@@ -1125,8 +1249,7 @@ function App() {
               </a>
             </div>
 
-            <p data-aos-delay="650">&#169; Created by Hari</p>
-          </footer>
+            <p data-aos-delay="650">&#169; Created by Hari</p> */}
         </section>
       </main>
     </>
