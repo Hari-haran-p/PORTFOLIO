@@ -1,13 +1,15 @@
 import "./App.css";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm("mailservice", "mailtemplate", form.current, {
         publicKey: "tFy6-VrVdvDDGwgph",
@@ -15,9 +17,12 @@ function App() {
       .then(
         () => {
           console.log("SUCCESS!");
+          toast.success("Mail Sent Successfully")
+          form.current.reset();
         },
         (error) => {
           console.log("FAILED...", error.text);
+          toast.error("Error Sending Mail")
         }
       );
   };
@@ -70,6 +75,7 @@ function App() {
   return (
     <>
       <header className="header">
+      <ToastContainer />
         <nav className="nav bd_grid">
           <div>
             <a href="#" className="nav_logo">
@@ -1127,7 +1133,6 @@ function App() {
 
         {/* Footer Section */}
         <section id="contact">
-          {/* <div class="container"> */}
           <div class="inner-container">
             <div class="tile1">
               <div class="tile1-heading">Get in touch</div>
@@ -1210,46 +1215,7 @@ function App() {
                 </div>
               </div>
             </div>
-            {/* </div> */}
           </div>
-          {/* <p className="footer_title">Hariharan P</p>
-
-            <div className="footer_socials">
-              <a
-                href="https://www.facebook.com/virat.hari.3386"
-                target="blank"
-                className="footer_icon"
-                data-aos-delay="250"
-              >
-                <i className="bx bxl-facebook-circle"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/domi_kido___/"
-                target="blank"
-                className="footer_icon"
-                data-aos-delay="350"
-              >
-                <i className="bx bxl-instagram"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/hari-haran-p/"
-                target="blank"
-                className="footer_icon"
-                data-aos-delay="450"
-              >
-                <i className="bx bxl-linkedin"></i>
-              </a>
-              <a
-                href="https://github.com/Hari-haran-p"
-                target="blank"
-                className="footer_icon"
-                data-aos-delay="550"
-              >
-                <i className="bx bxl-github"></i>
-              </a>
-            </div>
-
-            <p data-aos-delay="650">&#169; Created by Hari</p> */}
         </section>
       </main>
     </>
